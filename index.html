@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Pro Camera — inspirované S25</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app">
+    <div class="camera-shell">
+      <video id="preview" autoplay playsinline muted></video>
+
+      <div class="top-bar">
+        <div class="left">
+          <button id="switch-constraints" class="icon-btn" title="Přepnout fotoaparát">⤾</button>
+        </div>
+        <div class="center">
+          <div id="mode-label">PHOTO</div>
+        </div>
+        <div class="right">
+          <div id="zoom-indicator">1×</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="zoom-controls">
+          <input id="zoom-slider" type="range" min="1" max="10" step="0.1" value="1" />
+          <div class="zoom-quick">
+            <button class="quick" data-z="1">1×</button>
+            <button class="quick" data-z="3">3×</button>
+            <button class="quick" data-z="5">5×</button>
+            <button class="quick" data-z="10">10×</button>
+          </div>
+        </div>
+
+        <div class="shutter-row">
+          <button id="gallery" class="flat">Galerie</button>
+          <button id="shutter" class="shutter">●</button>
+          <button id="toggle-camera" class="flat">Přední</button>
+        </div>
+      </div>
+
+      <div id="status-toast" class="toast hidden"></div>
+      <canvas id="snap-canvas" class="hidden"></canvas>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
